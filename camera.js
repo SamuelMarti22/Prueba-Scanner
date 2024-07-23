@@ -62,13 +62,13 @@ function startup() {
         (ev) => {
             if (!streaming) {
                 width = video.videoWidth
-                height = video.videoHeight / (video.videoWidth / width);
+                height = width / (video.videoHeight / width);
 
                 if (isNaN(height)) {
                     if(screen.width < 992){
                         height = width / (16/9)
                     }
-                    height = width / (4 / 3);
+                    height = width / (16 / 9);
                 }
 
                 video.setAttribute("width", width);
