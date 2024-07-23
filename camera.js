@@ -101,8 +101,8 @@ function takepicture() {
   shuttersound.play();
   const context = canvas.getContext("2d");
   if (photo.width && photo.height) {
-    canvas.width = photo.width;
-    canvas.height = photo.height;
+    photo.width = canvas.width;
+    photo.height = canvas.height;
     context.drawImage(video, 0, 0, photo.width, photo.height);
     video.style.display = "none";
     startbutton.style.display = "none";
