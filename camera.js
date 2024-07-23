@@ -1,4 +1,4 @@
-let width = 0; // We will scale the photo width to this
+let width = 320; // We will scale the photo width to this
 let height = 0; // This will be computed based on the input stream
 
 let streaming = false;
@@ -62,10 +62,8 @@ function startup() {
         (ev) => {
             if (!streaming) {
                 if(screen.width < 992){
-                    width = video.videoWidth
                     height = width / (video.videoHeight / width);
                 } else {
-                    width = video.videoWidth
                     height = video.videoHeight / (video.videoWidth / width);
                 }
 
