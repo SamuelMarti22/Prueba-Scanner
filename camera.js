@@ -1,4 +1,4 @@
-const width = 320; // We will scale the photo width to this
+const width = 0; // We will scale the photo width to this
 let height = 0; // This will be computed based on the input stream
 
 let streaming = false;
@@ -65,7 +65,8 @@ function startup() {
               width = video.videoWidth
               height = width / (video.videoHeight / width);
           } else {
-              height = video.videoHeight / (video.videoWidth / width);
+            width = video.videoWidth
+            height = video.videoHeight / (video.videoWidth / width);
           }
 
         if (isNaN(height)) {
