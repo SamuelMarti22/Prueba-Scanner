@@ -62,7 +62,7 @@ function startup() {
         (ev) => {
             if (!streaming) {
                 if (screen.width < 992) {
-                    width = 100
+                    width = 320
                     height = video.videoHeight;
                 } else {
                     width = 320
