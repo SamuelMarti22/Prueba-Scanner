@@ -107,8 +107,12 @@ function takepicture() {
   shuttersound.play();
   const context = canvas.getContext("2d");
   if (photo.width && photo.height) {
+    console.log("PhotoW2: "+photo.width)
+    console.log("Canvas2: "+canvas.width)
     photo.width = canvas.width;
     photo.height = canvas.height;
+    console.log("PhotoW1: "+photo.width)
+    console.log("Canvas1: "+canvas.width)
     context.drawImage(video, 0, 0, photo.width, photo.height);
     video.style.display = "none";
     startbutton.style.display = "none";
