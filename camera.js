@@ -65,7 +65,7 @@ function startup() {
                     width = 320
                     height = video.videoHeight;
                 } else {
-                    width = 320
+                    width = 100
                     height = video.videoHeight / (video.videoWidth / width);
                 }
 
