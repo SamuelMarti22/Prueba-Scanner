@@ -132,6 +132,14 @@ function takepicture() {
   }
 }
 
+function downloadImage() {
+  const image = canvas.toDataURL("image/png");
+  const link = document.createElement("a");
+  link.href = image;
+  link.download = 'captura.png';
+  link.click();
+}
+
 LABELS = {
   '-1': 'Incierto',
   '0': 'Empaque impreso',
