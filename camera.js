@@ -73,8 +73,8 @@ function startup() {
 
                 video.setAttribute("width", width);
                 video.setAttribute("height", height);
-                canvas.setAttribute("width", width);
-                canvas.setAttribute("height", height);
+                canvas.setAttribute("width", 500);
+                canvas.setAttribute("height", 300);
                 streaming = true;
             }
         },
