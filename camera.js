@@ -1,4 +1,4 @@
-const width = 320; // We will scale the photo width to this
+let width = 0; // We will scale the photo width to this
 let height = 0; // This will be computed based on the input stream
 
 let streaming = false;
@@ -61,20 +61,20 @@ function startup() {
         "canplay",
         (ev) => {
             if (!streaming) {
+                width = video.videoWidth
                 height = video.videoHeight / (video.videoWidth / width);
 
                 if (isNaN(height)) {
                     if(screen.width < 992){
                         height = width / (16/9)
-                    } else {
-                    height = width / (4 / 3);
                     }
+                    height = width / (4 / 3);
                 }
 
                 video.setAttribute("width", width);
                 video.setAttribute("height", height);
-                canvas.setAttribute("width", 500);
-                canvas.setAttribute("height", 300);
+                canvas.setAttribute("width", width);
+                canvas.setAttribute("height", height);
                 streaming = true;
             }
         },
@@ -105,9 +105,17 @@ function takepicture() {
     shuttersound.play();
     const context = canvas.getContext("2d");
     if (photo.width && photo.height) {
+        console.log("PhotoW1"+photo.width)
+        console.log("PhotoH1"+photo.height)
+        console.log("CanvasW1"+canvas.width)
+        console.log("CanvasH1"+canvas.height)
         photo.width = canvas.width;
         photo.height = canvas.height;
         context.drawImage(video, 0, 0, photo.width, photo.height);
+        console.log("PhotoW2"+photo.width)
+        console.log("PhotoH2"+photo.height)
+        console.log("CanvasW2"+canvas.width)
+        console.log("CanvasH2"+canvas.height)
         video.style.display = "none";
         startbutton.style.display = "none";
         photo.style.display = "";
