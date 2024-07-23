@@ -63,7 +63,7 @@ function startup() {
             if (!streaming) {
                 if (screen.width < 992) {
                     width = video.videoWidth
-                    height = width / (16 / 9);
+                    height = width / (video.videoHeight / width);
                 } else {
                     width = video.videoWidth
                     height = video.videoHeight / (video.videoWidth / width);
