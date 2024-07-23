@@ -62,6 +62,7 @@ function startup() {
         (ev) => {
             if (!streaming) {
                 if(screen.width < 992){
+                    width = video.videoWidth
                     height = width / (video.videoHeight / width);
                 } else {
                     height = video.videoHeight / (video.videoWidth / width);
@@ -112,9 +113,9 @@ function takepicture() {
         console.log("PhotoH1"+photo.height)
         console.log("CanvasW1"+canvas.width)
         console.log("CanvasH1"+canvas.height)
+        document.getElementById("hola").innerText = canvas.width
         photo.width = canvas.width;
         photo.height = canvas.height;
-        document.getElementById("hola").innerText = canvas.width
         context.drawImage(video, 0, 0, photo.width, photo.height);
         console.log("PhotoW2"+photo.width)
         console.log("PhotoH2"+photo.height)
