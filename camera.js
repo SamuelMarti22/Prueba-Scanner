@@ -114,6 +114,7 @@ function takepicture() {
         console.log("CanvasH1"+canvas.height)
         photo.width = canvas.width;
         photo.height = canvas.height;
+        document.getElementById("hola").innerText = canvas.width
         context.drawImage(video, 0, 0, photo.width, photo.height);
         console.log("PhotoW2"+photo.width)
         console.log("PhotoH2"+photo.height)
