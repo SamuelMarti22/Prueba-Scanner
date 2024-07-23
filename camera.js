@@ -61,14 +61,19 @@ function startup() {
         "canplay",
         (ev) => {
             if (!streaming) {
-                width = video.videoWidth
-                height = width / (video.videoHeight / width);
+                if(screen.width < 992){
+                    width = video.videoWidth
+                    height = width / (video.videoHeight / width);
+                } else {
+                    width = video.videoWidth
+                    height = video.videoHeight / (video.videoWidth / width);
+                }
 
                 if (isNaN(height)) {
                     if(screen.width < 992){
                         height = width / (16/9)
                     }
-                    height = width / (16 / 9);
+                    height = width / (4 / 3);
                 }
 
                 video.setAttribute("width", width);
