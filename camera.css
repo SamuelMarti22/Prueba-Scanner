@@ -47,6 +47,9 @@
     .text-main-camera {
         font-size: 40px;
     }
+    #photo{
+        width: 320px;
+    }
 }
 
 #restartbutton,
