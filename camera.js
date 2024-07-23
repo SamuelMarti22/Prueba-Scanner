@@ -70,7 +70,12 @@ function startup() {
                 }
 
                 if (isNaN(height)) {
+                  if(screen.width < 992){
+                    height = width / (16 / 9);
+                  } else {
                     height = width / (4 / 3);
+                  }
+                  
                 }
 
                 video.setAttribute("width", width);
